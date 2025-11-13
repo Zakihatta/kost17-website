@@ -883,6 +883,19 @@ a {
 }
 
 /* KETIKA MENU AKTIF (via JavaScript) */
+body.nav-open .main-header {
+    /* 1. Bawa seluruh header (logo & tombol X) ke depan 
+         di atas overlay 
+    */
+    z-index: 2002; /* Lebih tinggi dari overlay (2000) */
+    
+    /* 2. Buat background-nya transparan, agar tidak ada 
+         kotak putih aneh di atas overlay marun 
+    */
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
 body.nav-open .mobile-nav {
     opacity: 1;
     visibility: visible;
@@ -900,7 +913,9 @@ body.nav-open .mobile-menu-toggle .bar:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -6px);
 }
 body.nav-open .mobile-menu-toggle .bar {
-    background-color: var(--bg-white); /* Ubah warna 'X' jadi putih */
+    /* Ganti warna 'X' jadi putih agar kontras 
+       dengan overlay marun Anda */
+    background-color: var(--bg-white); 
 }
 
 /* ------ Breakpoint 1: Tablet (<= 1024px) ------ */
